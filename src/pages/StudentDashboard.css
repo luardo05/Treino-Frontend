@@ -1,0 +1,195 @@
+.student-container {
+    min-height: 100vh;
+    background-color: var(--bg-app);
+    padding: 20px;
+    max-width: 800px; /* Limita largura em monitores grandes */
+    margin: 0 auto;   /* Centraliza na tela */
+}
+
+/* --- Cabeçalho --- */
+.student-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.student-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.student-header span {
+    color: var(--primary);
+}
+
+.btn-logout-small {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.btn-logout-small:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+/* --- Abas --- */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.tab-pill {
+    flex: 1; /* Botões ocupam largura igual */
+    padding: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: center;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.tab-pill.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* --- Lista de Treinos (Sanfona/Accordion) --- */
+.workout-view-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden; /* Para o canto arredondado funcionar */
+    border: 1px solid var(--border-color);
+}
+
+.workout-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(255,255,255,0.02);
+}
+
+.workout-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+.arrow-icon {
+    font-size: 1.2rem;
+    transition: 0.3s;
+    color: var(--primary);
+}
+
+.arrow-icon.open {
+    transform: rotate(180deg);
+}
+
+.workout-body {
+    padding: 0 20px 20px 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Lista de exercícios dentro do treino */
+.student-exercise-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.student-exercise-item:last-child {
+    border-bottom: none;
+}
+
+.ex-name {
+    font-weight: bold;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.ex-details {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- Card do Professor --- */
+.prof-profile {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.prof-avatar {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary);
+    color: white;
+    font-size: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Redes Sociais --- */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    border-radius: 50px; /* Botão arredondado */
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* Cores Oficiais */
+.social-btn.insta {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4);
+}
+
+.social-btn.whats {
+    background-color: #25D366;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}

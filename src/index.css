@@ -1,0 +1,53 @@
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+
+  /* --- NOVA PALETA SUAVE (Matte Dark) --- */
+  --bg-app: #18181b;          /* Cinza muito escuro (não preto) */
+  --bg-sidebar: #27272a;      /* Cinza levemente mais claro */
+  --bg-card: #27272a;         /* Mesmo tom da sidebar para uniformidade */
+  --bg-input: #3f3f46;        /* Cinza médio para inputs */
+  
+  --primary: #6366f1;         /* Indigo Suave (em vez de azul neon) */
+  --primary-hover: #4f46e5;   /* Indigo mais escuro */
+  
+  --text-main: #f4f4f5;       /* Branco suave */
+  --text-muted: #a1a1aa;      /* Cinza claro para textos secundários */
+  --border-color: #3f3f46;    /* Bordas sutis */
+  
+  --danger: #ef4444;          /* Vermelho suave */
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+}
+
+/* Inputs e Botões Globais */
+input, select, textarea {
+  background-color: var(--bg-input);
+  color: white;
+  border: 1px solid transparent; /* Remove borda dura */
+  padding: 12px;
+  border-radius: 8px; /* Cantos mais arredondados */
+  outline: none;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+
+input:focus {
+  background-color: #52525b;
+  border-color: var(--primary);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  transition: 0.2s;
+  border-radius: 8px;
+}
+
+h1, h2, h3 { font-weight: 600; color: var(--text-main); }

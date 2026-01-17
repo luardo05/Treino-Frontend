@@ -1,0 +1,116 @@
+/* Cabeçalho (Criar nova ficha) */
+.wm-header {
+    margin-bottom: 25px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.wm-header input {
+    flex: 1; /* Ocupa espaço disponivel */
+}
+
+/* --- LISTA DE EXERCÍCIOS JÁ SALVOS --- */
+.exercise-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.exercise-item {
+    background-color: rgba(0,0,0,0.2); /* Fundo sutilmente mais escuro */
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border-color);
+}
+
+.exercise-info {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.exercise-info strong {
+    color: white;
+    font-size: 1rem;
+}
+
+.input-group {
+    display: grid;
+    
+    grid-template-columns: 2.5fr 0.6fr 0.6fr 1.2fr auto; 
+    gap: 10px;
+    margin-top: 25px;
+    background: rgba(255,255,255,0.02);
+    padding: 15px;
+    border-radius: 12px;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box; /* Garante que o padding não estoure a largura */
+}
+
+.input-group input {
+    width: 100%;
+    min-width: 0; /* Permite que o input encolha para caber na tela */
+}
+
+/* Botão de Adicionar (+) */
+.btn-add {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    height: 42px; /* Altura fixa para alinhar com inputs */
+    padding: 0 20px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.btn-add:hover { background-color: var(--primary-hover); }
+
+/* Botão de Remover (Lixeira/X) */
+.btn-del {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    margin-left: 10px;
+}
+
+.btn-del:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+/* --- RESPONSIVIDADE (CELULAR) --- */
+@media (max-width: 768px) {
+    .input-group {
+        /* No celular vira 1 coluna (tudo empilhado) */
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .btn-add {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .exercise-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .btn-del {
+        margin-left: 0;
+        align-self: flex-end; /* Botão excluir vai pra direita */
+        width: 100%;
+    }
+}
